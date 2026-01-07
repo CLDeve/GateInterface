@@ -418,7 +418,7 @@ const populateAssignGates = () => {
     .join("");
 };
 
-if (assignList && fsName) {
+if (assignList) {
   assignList.addEventListener("click", (event) => {
     const btn = event.target.closest(".assign-gate");
     if (!btn) return;
