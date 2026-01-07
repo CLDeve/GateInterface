@@ -990,7 +990,7 @@ body {
 
 .assign-page {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
 }
 
@@ -1000,6 +1000,10 @@ body {
   background: #15181e;
   border: 1px solid #2a3038;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+}
+
+.assign-panel-full {
+  margin-top: 18px;
 }
 
 .assign-title {
