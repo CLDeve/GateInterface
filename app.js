@@ -243,7 +243,7 @@ const pickCloseOfficers = (count = 2) =>
   closeGatePool.sort(() => 0.5 - Math.random()).slice(0, count);
 
 const parseTime = (value) => {
-  const match = value.match(/(\\d{2})(\\d{2})/);
+  const match = value.match(/(\d{2})(\d{2})/);
   if (!match) return null;
   return { hours: Number(match[1]), minutes: Number(match[2]) };
 };
