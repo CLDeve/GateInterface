@@ -874,6 +874,16 @@ body {
   border-bottom: 1px solid rgba(255, 106, 0, 0.6);
 }
 
+.fs-badge {
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9c7c0;
+  background: #161a20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 .old-gate {
   color: #7a6a4a;
   text-decoration: line-through;

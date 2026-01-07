@@ -392,6 +392,15 @@ if (assignSubmit && fsName) {
     ).map((btn) => btn.textContent.trim());
     if (!selected || gates.length === 0) return;
     fsName.textContent = `${selected} (${gates.join(", ")})`;
+    document.querySelectorAll(".flight-card").forEach((card) => {
+      const gateEl = card.querySelector(".gate-label");
+      const fsBadge = card.querySelector(".fs-badge");
+      if (!gateEl || !fsBadge) return;
+      const gateText = `Gate ${gateEl.textContent.replace("Gate", "").trim()}`;
+      if (gates.includes(gateText)) {
+        fsBadge.textContent = `FS: ${selected.replace("FS - ", "")}`;
+      }
+    });
     closeAssignModal();
   });
 }
