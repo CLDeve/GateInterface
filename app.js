@@ -472,13 +472,17 @@ if (assignSummary) {
         .map((gate) => ({ gate, time: gateTimes[gate] || "----" }))
         .filter((item) => item.time !== "----");
       const minutes = times.map((item) => toMinutes(item.time)).filter((m) => m !== null);
-      const min = 0;
-      const max = 1440;
-      const span = 1440;
+      const minRaw = minutes.length ? Math.min(...minutes) : 0;
+      const maxRaw = minutes.length ? Math.max(...minutes) : 1440;
+      const pad = 30;
+      const min = Math.max(0, minRaw - pad);
+      const max = Math.min(1440, maxRaw + pad);
+      const span = Math.max(60, max - min);
 
-      const axisStart = "0000hrs";
-      const axisMid = "1200hrs";
-      const axisEnd = "2400hrs";
+      const axisStart = formatTime(Math.floor(min / 60), min % 60);
+      const mid = min + Math.floor(span / 2);
+      const axisMid = formatTime(Math.floor(mid / 60), mid % 60);
+      const axisEnd = formatTime(Math.floor((min + span) / 60), (min + span) % 60);
 
       let rowsCount = Math.min(4, Math.max(1, Math.ceil(times.length / 4)));
       if (times.length > 1 && rowsCount === 1) rowsCount = 2;
@@ -489,7 +493,7 @@ if (assignSummary) {
       const markers = times
         .map((item, idx) => {
           const m = toMinutes(item.time);
-          const left = m === null ? 0 : Math.round((m / span) * 100);
+          const left = m === null ? 0 : Math.round(((m - min) / span) * 100);
           const clamped = Math.min(98, Math.max(2, left));
           const rowIndex = rowsCount > 1 ? idx % rowsCount : 0;
           const offset = rowsCount > 1 ? (rowIndex - (rowsCount - 1) / 2) * 1.2 : 0;
