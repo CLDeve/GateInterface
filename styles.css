@@ -973,6 +973,24 @@ body {
   width: min(560px, 92vw);
 }
 
+.assign-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.assign-select {
+  margin-top: 6px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #1f242d;
+  color: #f5f2ea;
+  font-weight: 600;
+}
+
 .assign-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
