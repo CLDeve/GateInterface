@@ -429,9 +429,10 @@ if (assignList) {
 if (assignSubmit) {
   assignSubmit.addEventListener("click", () => {
     const selected = assignFs ? assignFs.value : "";
-    const gates = Array.from(
+    const selectedButtons = Array.from(
       document.querySelectorAll(".assign-gate.is-selected")
-    ).map((btn) => btn.textContent.trim());
+    );
+    const gates = selectedButtons.map((btn) => btn.textContent.trim());
     if (!selected || gates.length === 0) return;
     if (fsName) {
       fsName.textContent = `${selected} (${gates.join(", ")})`;
@@ -446,6 +447,7 @@ if (assignSubmit) {
         fsBadge.textContent = `FS: ${selected.replace("FS - ", "")}`;
       }
     });
+    selectedButtons.forEach((btn) => btn.remove());
     document.dispatchEvent(new Event("assignments:updated"));
     document.dispatchEvent(new Event("assignments:updated"));
   });
