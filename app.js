@@ -420,7 +420,7 @@ const populateAssignGates = () => {
       const time = gateTimes[gateLabel] || "--:--";
       return `<button class="assign-gate" type="button" data-gate="${gateLabel}">
         <span class="assign-gate-label">${gateLabel}</span>
-        <span class="assign-gate-time">${time}</span>
+        <span class="assign-gate-time">ETD ${time}</span>
       </button>`;
     })
     .join("");
@@ -442,16 +442,18 @@ if (assignSubmit) {
     );
     const gates = selectedButtons.map((btn) => btn.dataset.gate || btn.textContent.trim());
     if (!selected || gates.length === 0) return;
+    const existing = assignments[selected] || [];
+    const mergedGates = Array.from(new Set([...existing, ...gates]));
     if (fsName) {
-      fsName.textContent = `${selected} (${gates.join(", ")})`;
+      fsName.textContent = `${selected} (${mergedGates.join(", ")})`;
     }
-    assignments[selected] = gates;
+    assignments[selected] = mergedGates;
     document.querySelectorAll(".flight-card").forEach((card) => {
       const gateEl = card.querySelector(".gate-label");
       const fsBadge = card.querySelector(".fs-badge");
       if (!gateEl || !fsBadge) return;
       const gateText = `Gate ${gateEl.textContent.replace("Gate", "").trim()}`;
-      if (gates.includes(gateText)) {
+      if (mergedGates.includes(gateText)) {
         fsBadge.textContent = `FS: ${selected.replace("FS - ", "")}`;
       }
     });
