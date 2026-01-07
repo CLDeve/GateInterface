@@ -484,6 +484,17 @@ if (assignSummary) {
       const axisMid = formatTime(Math.floor(mid / 60), mid % 60);
       const axisEnd = formatTime(Math.floor((min + span) / 60), (min + span) % 60);
 
+      const tickStep = span > 360 ? 120 : 60;
+      const tickStart = Math.floor(min / tickStep) * tickStep;
+      const ticks = [];
+      for (let t = tickStart; t <= min + span; t += tickStep) {
+        const left = Math.round(((t - min) / span) * 100);
+        const clamped = Math.min(98, Math.max(2, left));
+        ticks.push(
+          `<span class="timeline-tick" style="left:${clamped}%">${formatTime(Math.floor(t / 60), t % 60)}</span>`
+        );
+      }
+
       let rowsCount = Math.min(4, Math.max(1, Math.ceil(times.length / 4)));
       if (times.length > 1 && rowsCount === 1) rowsCount = 2;
       const rowHeight = 18;
@@ -510,6 +521,7 @@ if (assignSummary) {
           <div class="timeline-label">${fs}</div>
           <div class="timeline" style="height:${timelineHeight}px;">
             <div class="timeline-axis"><span>${axisStart}</span><span>${axisMid}</span><span>${axisEnd}</span></div>
+            <div class="timeline-ticks">${ticks.join("")}</div>
             ${markers}
           </div>
         </div>`;

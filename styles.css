@@ -1157,6 +1157,34 @@ body {
   color: #a7a39a;
 }
 
+.timeline-ticks {
+  position: absolute;
+  top: 22px;
+  left: 16px;
+  right: 16px;
+  height: 14px;
+}
+
+.timeline-tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 9px;
+  color: #7f8896;
+  letter-spacing: 0.08em;
+}
+
+.timeline-tick::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  width: 1px;
+  height: 18px;
+  background: rgba(127, 136, 150, 0.35);
+  transform: translateX(-50%);
+}
+
 .timeline-marker {
   position: absolute;
   top: 50%;
