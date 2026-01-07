@@ -462,21 +462,27 @@ if (assignSummary) {
         .map((gate) => ({ gate, time: gateTimes[gate] || "----" }))
         .filter((item) => item.time !== "----");
       const minutes = times.map((item) => toMinutes(item.time)).filter((m) => m !== null);
-      const min = minutes.length ? Math.min(...minutes) : 0;
-      const max = minutes.length ? Math.max(...minutes) : min + 60;
-      const span = Math.max(60, max - min);
+      const min = 0;
+      const max = 1440;
+      const span = 1440;
 
-      const axisStart = formatTime(Math.floor(min / 60), min % 60);
-      const mid = min + Math.floor(span / 2);
-      const axisMid = formatTime(Math.floor(mid / 60), mid % 60);
-      const axisEnd = formatTime(Math.floor((min + span) / 60), (min + span) % 60);
+      const axisStart = "0000hrs";
+      const axisMid = "1200hrs";
+      const axisEnd = "2400hrs";
+
+      const rowsCount = Math.min(4, Math.max(1, Math.ceil(times.length / 5)));
+      const rowHeight = 18;
+      const baseHeight = 34;
+      const timelineHeight = baseHeight + (rowsCount - 1) * rowHeight;
 
       const markers = times
-        .map((item) => {
+        .map((item, idx) => {
           const m = toMinutes(item.time);
-          const left = m === null ? 0 : Math.round(((m - min) / span) * 100);
-          const clamped = Math.min(95, Math.max(5, left));
-          return `<div class="timeline-marker" style="left:${clamped}%">
+          const left = m === null ? 0 : Math.round((m / span) * 100);
+          const clamped = Math.min(98, Math.max(2, left));
+          const rowIndex = rowsCount > 1 ? idx % rowsCount : 0;
+          const top = 8 + rowIndex * rowHeight;
+          return `<div class="timeline-marker" style="left:${clamped}%; top:${top}px;">
               <div class="timeline-dot"></div>
               <div class="timeline-label-small">${item.gate} ${item.time}</div>
             </div>`;
@@ -485,7 +491,7 @@ if (assignSummary) {
 
       return `<div class="timeline-row">
           <div class="timeline-label">${fs}</div>
-          <div class="timeline">
+          <div class="timeline" style="height:${timelineHeight}px;">
             <div class="timeline-axis"><span>${axisStart}</span><span>${axisMid}</span><span>${axisEnd}</span></div>
             ${markers}
           </div>
