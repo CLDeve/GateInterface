@@ -1044,6 +1044,8 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
+  display: grid;
+  gap: 6px;
 }
 
 .assign-gate:hover {
@@ -1054,6 +1056,12 @@ body {
   background: rgba(48, 235, 255, 0.2);
   border-color: rgba(48, 235, 255, 0.7);
   color: #30ebff;
+}
+
+.assign-gate-time {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
 }
 
 .assign-submit {

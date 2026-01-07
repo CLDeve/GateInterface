@@ -409,12 +409,20 @@ const getGateTimes = () => {
 
 const populateAssignGates = () => {
   if (!assignList) return;
+  const gateTimes = getGateTimes();
   const gatesFromCards = Array.from(document.querySelectorAll(".gate-label"))
     .map((el) => el.textContent.replace("Gate", "").trim())
     .filter(Boolean);
   const gates = gatesFromCards.length ? gatesFromCards : defaultGates;
   assignList.innerHTML = gates
-    .map((gate) => `<button class="assign-gate" type="button">Gate ${gate}</button>`)
+    .map((gate) => {
+      const gateLabel = `Gate ${gate}`;
+      const time = gateTimes[gateLabel] || "--:--";
+      return `<button class="assign-gate" type="button" data-gate="${gateLabel}">
+        <span class="assign-gate-label">${gateLabel}</span>
+        <span class="assign-gate-time">${time}</span>
+      </button>`;
+    })
     .join("");
 };
 
@@ -432,7 +440,7 @@ if (assignSubmit) {
     const selectedButtons = Array.from(
       document.querySelectorAll(".assign-gate.is-selected")
     );
-    const gates = selectedButtons.map((btn) => btn.textContent.trim());
+    const gates = selectedButtons.map((btn) => btn.dataset.gate || btn.textContent.trim());
     if (!selected || gates.length === 0) return;
     if (fsName) {
       fsName.textContent = `${selected} (${gates.join(", ")})`;
