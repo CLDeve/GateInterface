@@ -976,20 +976,21 @@
         <button class="modal-close assign-close" type="button">Close</button>
       </div>
       <div class="modal-body">
-        <label class="assign-label" for="assign-fs">Select FS</label>
-        <select id="assign-fs" class="assign-select">
-          <option value="">Select FS</option>
-          <option>FS - A. Rahman</option>
-          <option>FS - S. Lim</option>
-          <option>FS - K. Wong</option>
-          <option>FS - J. Tan</option>
-        </select>
+        <div class="assign-header">
+          <label class="assign-label" for="assign-fs">Select FS</label>
+          <select id="assign-fs" class="assign-select">
+            <option value="">Select FS</option>
+            <option>FS - A. Rahman</option>
+            <option>FS - S. Lim</option>
+            <option>FS - K. Wong</option>
+            <option>FS - J. Tan</option>
+          </select>
+        </div>
         <div class="assign-grid" id="assign-gate-list"></div>
         <div class="assign-actions">
           <button class="modal-action assign-submit" type="button" id="assign-submit">Submit</button>
-          <button class="modal-action assign-view" type="button" id="assign-view">View Assignments</button>
         </div>
-        <div class="assign-summary is-hidden" id="assign-summary"></div>
+        <div class="assign-summary" id="assign-summary"></div>
       </div>
     </div>
     <script src="app.js"></script>

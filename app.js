@@ -219,7 +219,6 @@ const assignClose = document.querySelector(".assign-close");
 const assignList = document.querySelector("#assign-gate-list");
 const assignFs = document.querySelector("#assign-fs");
 const assignSubmit = document.querySelector("#assign-submit");
-const assignView = document.querySelector("#assign-view");
 const assignSummary = document.querySelector("#assign-summary");
 const fsName = document.querySelector("#fs-name");
 
@@ -412,12 +411,13 @@ if (assignSubmit && fsName) {
         fsBadge.textContent = `FS: ${selected.replace("FS - ", "")}`;
       }
     });
+    document.dispatchEvent(new Event("assignments:updated"));
     closeAssignModal();
   });
 }
 
-if (assignView && assignSummary) {
-  assignView.addEventListener("click", () => {
+if (assignSummary) {
+  const renderTimeline = () => {
     const gateTimes = {};
     document.querySelectorAll(".flight-card").forEach((card) => {
       const gateEl = card.querySelector(".gate-label");
@@ -465,6 +465,7 @@ if (assignView && assignSummary) {
     assignSummary.innerHTML = rows.length
       ? rows.join("")
       : "<div class=\"assign-row\"><span>No assignments</span><span>-</span></div>";
-    assignSummary.classList.toggle("is-hidden");
-  });
+  };
+  renderTimeline();
+  document.addEventListener("assignments:updated", renderTimeline);
 }

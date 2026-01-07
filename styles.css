@@ -980,7 +980,12 @@ body {
 }
 
 .assign-modal {
-  width: min(560px, 92vw);
+  width: min(900px, 94vw);
+}
+
+.assign-header {
+  display: grid;
+  gap: 6px;
 }
 
 .assign-label {
@@ -1003,8 +1008,8 @@ body {
 
 .assign-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .assign-gate {
@@ -1045,13 +1050,13 @@ body {
 }
 
 .assign-summary {
-  margin-top: 12px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: #1a1e25;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #151a20;
   border: 1px solid rgba(255, 255, 255, 0.08);
   display: grid;
-  gap: 14px;
+  gap: 16px;
   font-size: 12px;
 }
 
