@@ -1,10 +1,25 @@
 const tabs = document.querySelectorAll(".tab");
 
 const setActiveTab = (tab) => {
-  tabs.forEach((item) => {
-    const isActive = item === tab;
-    item.classList.toggle("active", isActive);
-    item.setAttribute("aria-selected", isActive ? "true" : "false");
+  const isActive = tab.classList.toggle("active");
+  tab.setAttribute("aria-selected", isActive ? "true" : "false");
+  filterUnassignedCards();
+};
+
+const unassignedSection = document.querySelector("#unassigned-flights");
+const filterUnassignedCards = () => {
+  if (!unassignedSection) return;
+  const cards = unassignedSection.querySelectorAll(".card");
+  const activeTerminals = Array.from(tabs)
+    .filter((item) => item.classList.contains("active"))
+    .map((item) => item.dataset.terminal)
+    .filter(Boolean);
+  const showAll = activeTerminals.length === 0;
+  cards.forEach((card) => {
+    const matches = showAll
+      ? true
+      : activeTerminals.some((term) => card.classList.contains(`${term}-card`));
+    card.classList.toggle("is-hidden", !matches);
   });
 };
 
@@ -29,6 +44,11 @@ const applyProgressColors = () => {
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => setActiveTab(tab));
 });
+
+const activeTab = document.querySelector(".tab.active");
+if (activeTab) {
+  filterUnassignedCards();
+}
 
 applyProgressColors();
 

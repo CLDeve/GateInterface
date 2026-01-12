@@ -350,6 +350,33 @@ body {
   color: #141414;
 }
 
+.tab[data-terminal="t1"] {
+  border-color: rgba(59, 210, 255, 0.5);
+}
+
+.tab[data-terminal="t1"].active {
+  background: #3bd2ff;
+  color: #0b0f14;
+}
+
+.tab[data-terminal="t2"] {
+  border-color: rgba(255, 155, 61, 0.5);
+}
+
+.tab[data-terminal="t2"].active {
+  background: #ff9b3d;
+  color: #0b0f14;
+}
+
+.tab[data-terminal="t3"] {
+  border-color: rgba(176, 124, 255, 0.5);
+}
+
+.tab[data-terminal="t3"].active {
+  background: #b07cff;
+  color: #120a1c;
+}
+
 .section {
   margin-top: 26px;
 }
@@ -457,6 +484,37 @@ body {
 .t2-card .card-meta,
 .t2-card .card-times {
   color: rgba(255, 244, 231, 0.92);
+}
+
+.muted-card.t1-card {
+  background: #0f6d95;
+  border-color: #3bd2ff;
+}
+
+.muted-card.t2-card {
+  background: #b65712;
+  border-color: #ff9b3d;
+}
+
+.t3-card {
+  border-color: #b07cff;
+  background: #5b2a88;
+  box-shadow: 0 14px 30px rgba(165, 110, 255, 0.5);
+  color: #f6efff;
+}
+
+.t3-card .card-sub {
+  color: #d4b7ff;
+}
+
+.t3-card .card-meta,
+.t3-card .card-times {
+  color: rgba(246, 239, 255, 0.92);
+}
+
+.muted-card.t3-card {
+  background: #5b2a88;
+  border-color: #b07cff;
 }
 
 .card.compact {
