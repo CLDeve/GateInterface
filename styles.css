@@ -399,6 +399,26 @@ body {
   }
 }
 
+@media (orientation: portrait) {
+  .os-page .frame {
+    padding: 18px 18px 28px;
+  }
+
+  .os-page .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .os-page .header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .os-page .card-grid.five-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card {
   border: 2px solid var(--line);
   border-radius: 10px;
