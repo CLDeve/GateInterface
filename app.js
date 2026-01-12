@@ -328,6 +328,10 @@ const updateRtGotForInProgress = () => {
     rtEl.textContent = `RT: ${rt}`;
     times.appendChild(gotEl);
     times.appendChild(rtEl);
+    const rtMatch = rt.match(/(\d{4})hrs/);
+    if (rtMatch) {
+      card.dataset.rtMinutes = String(toMinutes(`${rtMatch[1]}hrs`));
+    }
   });
 };
 
@@ -360,12 +364,10 @@ const sortInProgressByRT = () => {
     const cards = Array.from(grid.querySelectorAll(".flight-card"));
     if (cards.length === 0) return;
     cards.sort((a, b) => {
-      const aRt = a.querySelector(".rt-time")?.textContent || "";
-      const bRt = b.querySelector(".rt-time")?.textContent || "";
-      const aMatch = aRt.match(/(\d{4})hrs/);
-      const bMatch = bRt.match(/(\d{4})hrs/);
-      const aTime = aMatch ? toMinutes(`${aMatch[1]}hrs`) : Number.MAX_SAFE_INTEGER;
-      const bTime = bMatch ? toMinutes(`${bMatch[1]}hrs`) : Number.MAX_SAFE_INTEGER;
+      const aData = Number(a.dataset.rtMinutes);
+      const bData = Number(b.dataset.rtMinutes);
+      const aTime = Number.isFinite(aData) && aData > 0 ? aData : Number.MAX_SAFE_INTEGER;
+      const bTime = Number.isFinite(bData) && bData > 0 ? bData : Number.MAX_SAFE_INTEGER;
       return aTime - bTime;
     });
     cards.forEach((card) => grid.appendChild(card));
