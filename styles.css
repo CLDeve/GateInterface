@@ -540,6 +540,24 @@ body {
   text-transform: uppercase;
 }
 
+.card-sub.with-got {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.card-sub.with-got .gate-label-text {
+  color: inherit;
+}
+
+.got-under-gate {
+  font-size: 11px;
+  color: #f7d488;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
 .card-meta {
   margin-top: 8px;
   display: flex;

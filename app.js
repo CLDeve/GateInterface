@@ -52,28 +52,6 @@ if (activeTab) {
 
 applyProgressColors();
 
-const updateGotTimes = () => {
-  const rows = document.querySelectorAll(".card .card-times");
-  rows.forEach((times) => {
-    if (times.querySelector(".got-time")) return;
-    const etdSpan = Array.from(times.querySelectorAll("span")).find((span) =>
-      span.textContent.trim().startsWith("ETD")
-    );
-    if (!etdSpan) return;
-    const match = etdSpan.textContent.match(/(\d{4})hrs/);
-    if (!match) return;
-    const etd = `${match[1]}hrs`;
-    const got = subtractMinutes(etd, 70);
-    if (!got || got === "-") return;
-    const span = document.createElement("span");
-    span.className = "got-time";
-    span.textContent = `GOT ${got}`;
-    times.appendChild(span);
-  });
-};
-
-updateGotTimes();
-
 const updatePullCount = () => {
   const countEl = document.querySelector("#pull-count");
   if (!countEl) return;
@@ -302,6 +280,33 @@ const subtractMinutes = (timeLabel, minutes) => {
   const m = normalized % 60;
   return formatTime(h, m);
 };
+
+const updateGotTimes = () => {
+  const rows = document.querySelectorAll(".card .card-times");
+  rows.forEach((times) => {
+    const etdSpan = Array.from(times.querySelectorAll("span")).find((span) =>
+      span.textContent.trim().startsWith("ETD")
+    );
+    if (!etdSpan) return;
+    const match = etdSpan.textContent.match(/(\d{4})hrs/);
+    if (!match) return;
+    const etd = `${match[1]}hrs`;
+    const got = subtractMinutes(etd, 70);
+    if (!got || got === "-") return;
+    const card = times.closest(".card");
+    if (!card) return;
+    const gateEl = card.querySelector(".card-sub");
+    if (!gateEl) return;
+    const gateText = gateEl.dataset.gateLabel || gateEl.textContent.trim();
+    gateEl.dataset.gateLabel = gateText;
+    gateEl.classList.add("with-got");
+    gateEl.innerHTML = `<span class="gate-label-text">${gateText}</span><span class="got-under-gate">GOT ${got}</span>`;
+    const oldGot = times.querySelector(".got-time");
+    if (oldGot) oldGot.remove();
+  });
+};
+
+updateGotTimes();
 
 const toMinutes = (timeLabel) => {
   const parsed = parseTime(timeLabel);
