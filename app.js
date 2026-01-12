@@ -364,17 +364,22 @@ const sortInProgressByRT = () => {
     const cards = Array.from(grid.querySelectorAll(".flight-card"));
     if (cards.length === 0) return;
     cards.sort((a, b) => {
-      const aData = Number(a.dataset.rtMinutes);
-      const bData = Number(b.dataset.rtMinutes);
-      const aTime = Number.isFinite(aData) && aData > 0 ? aData : Number.MAX_SAFE_INTEGER;
-      const bTime = Number.isFinite(bData) && bData > 0 ? bData : Number.MAX_SAFE_INTEGER;
+      const getRtMinutes = (card) => {
+        const data = Number(card.dataset.rtMinutes);
+        if (Number.isFinite(data) && data > 0) return data;
+        const rtText = card.querySelector(".rt-time")?.textContent || "";
+        const match = rtText.match(/(\d{4})hrs/);
+        return match ? toMinutes(`${match[1]}hrs`) : Number.MAX_SAFE_INTEGER;
+      };
+      const aTime = getRtMinutes(a);
+      const bTime = getRtMinutes(b);
       return aTime - bTime;
     });
     cards.forEach((card) => grid.appendChild(card));
   });
 };
 
-sortInProgressByRT();
+setTimeout(sortInProgressByRT, 0);
 
 const updateUnassignedBadges = () => {
   const section = document.querySelector("#unassigned-flights");
