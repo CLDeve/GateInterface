@@ -52,6 +52,25 @@ if (activeTab) {
 
 applyProgressColors();
 
+const updateGotTimes = () => {
+  const cards = document.querySelectorAll(".card .card-times");
+  cards.forEach((times) => {
+    if (times.querySelector(".got-time")) return;
+    const text = times.textContent || "";
+    const match = text.match(/ETD[:\s]*.*?(\d{4})hrs/);
+    if (!match) return;
+    const etd = `${match[1]}hrs`;
+    const got = subtractMinutes(etd, 70);
+    if (!got || got === "-") return;
+    const span = document.createElement("span");
+    span.className = "got-time";
+    span.textContent = `GOT ${got}`;
+    times.appendChild(span);
+  });
+};
+
+updateGotTimes();
+
 const updatePullCount = () => {
   const countEl = document.querySelector("#pull-count");
   if (!countEl) return;
