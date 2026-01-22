@@ -1954,12 +1954,14 @@ body {
 .phone-stage {
   display: flex;
   justify-content: center;
-  padding: 32px 0 24px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 24px 0;
 }
 
 .phone-shell {
   position: relative;
-  width: min(320px, 90vw);
+  width: min(280px, 90vw);
   aspect-ratio: 9 / 19.5;
   border-radius: 44px;
   padding: 16px;
@@ -2149,8 +2151,8 @@ body {
 
 .phone-row {
   display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 10px;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 8px;
   padding: 14px 6px;
   border-bottom: 1px solid rgba(15, 23, 42, 0.1);
   align-items: start;
@@ -2197,20 +2199,59 @@ body {
   color: rgba(15, 23, 42, 0.75);
 }
 
-.phone-meta {
-  font-size: 10px;
-  letter-spacing: 0.02em;
-  color: rgba(15, 23, 42, 0.7);
-  white-space: nowrap;
+
+.phone-gate-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
 }
 
-.phone-meta .phone-gate,
-.phone-meta .phone-rt,
-.phone-meta .phone-got,
-.phone-meta .phone-etd,
-.phone-meta .phone-std {
-  font-weight: 700;
-  color: #0f172a;
+.phone-gate-change .gate-old {
+  color: rgba(15, 23, 42, 0.5);
+  text-decoration: line-through;
+}
+
+.phone-gate-change .gate-new {
+  color: #b91c1c;
+  animation: gate-blink 1.1s ease-in-out infinite;
+}
+
+@keyframes gate-blink {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 0.35;
+    text-shadow: 0 0 10px rgba(185, 28, 28, 0.6);
+  }
+}
+
+.gate-marquee {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b91c1c;
+}
+
+.gate-marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: gate-scroll 6s linear infinite;
+}
+
+@keyframes gate-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .phone-row[role="button"] {
@@ -2220,6 +2261,48 @@ body {
 .phone-row[role="button"]:focus-visible {
   outline: 2px solid #1e4ed6;
   outline-offset: 2px;
+}
+
+.phone-row-amber,
+.phone-row-red {
+  position: relative;
+  animation: row-blink 1.2s ease-in-out infinite;
+}
+
+.phone-row-amber {
+  border-color: rgba(251, 191, 36, 0.85);
+}
+
+.phone-row-red {
+  border-color: rgba(248, 113, 113, 0.85);
+}
+
+@keyframes row-blink {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background: #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(251, 191, 36, 0.75), 0 0 48px rgba(251, 191, 36, 0.45);
+    background: #fff2c7;
+  }
+}
+
+.phone-row-red {
+  animation-name: row-blink-red;
+}
+
+@keyframes row-blink-red {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background: #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(248, 113, 113, 0.8), 0 0 54px rgba(248, 113, 113, 0.5);
+    background: #ffd6d6;
+  }
 }
 
 .flight-detail .detail-header {
