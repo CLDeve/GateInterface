@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flight Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20250122" />
+  </head>
+  <body>
+    <main class="page phone-page">
+      <div class="frame">
+        <header class="topbar">
+          <div class="header-left">
+            <h1 class="page-title">Flight Details</h1>
+            <div class="last-updated">Last Updated: 22 Jan 2026 17:55</div>
+          </div>
+          <div class="header-right">
+            <a class="nav-button" href="phone-display.html">Back</a>
+          </div>
+        </header>
+        <section class="phone-stage">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen flight-detail">
+              <div class="detail-header">
+                <div class="detail-flight">
+                  <div class="detail-flight-no" id="detail-flight">SQ 120</div>
+                  <div class="detail-destination" id="detail-dest">Singapore (SIN)</div>
+                </div>
+                <span class="detail-status">Gate Open</span>
+              </div>
+              <div class="detail-route">
+                <span>SIN</span>
+                <span class="detail-route-line">✈</span>
+                <span id="detail-dest-code">SIN</span>
+              </div>
+              <div class="detail-times">
+                <div>
+                  <span>RT</span>
+                  <strong id="detail-rt">10:05</strong>
+                </div>
+                <div>
+                  <span>GOT</span>
+                  <strong id="detail-got">10:23</strong>
+                </div>
+                <div>
+                  <span>ETD</span>
+                  <strong id="detail-etd">10:39</strong>
+                </div>
+                <div>
+                  <span>STD</span>
+                  <strong id="detail-std">10:56</strong>
+                </div>
+              </div>
+              <div class="detail-card">
+                <div>
+                  <span>Gate</span>
+                  <strong id="detail-gate">A1</strong>
+                </div>
+                <div>
+                  <span>Destination</span>
+                  <strong id="detail-dest-short">SIN</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const flight = params.get("flight") || "SQ 120";
+      const dest = params.get("dest") || "SIN";
+      const gate = params.get("gate") || "A1";
+      const rt = params.get("rt") || "10:05";
+      const got = params.get("got") || "10:23";
+      const etd = params.get("etd") || "10:39";
+      const std = params.get("std") || "10:56";
+
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.textContent = value;
+        }
+      };
+
+      setText("detail-flight", flight);
+      setText("detail-dest", `${dest} (${dest})`);
+      setText("detail-dest-code", dest);
+      setText("detail-dest-short", dest);
+      setText("detail-gate", gate);
+      setText("detail-rt", rt);
+      setText("detail-got", got);
+      setText("detail-etd", etd);
+      setText("detail-std", std);
+    </script>
+  </body>
+</html>

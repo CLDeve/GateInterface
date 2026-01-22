@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phone Flight Display</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20250122" />
+  </head>
+  <body>
+    <main class="page phone-page">
+      <div class="frame">
+        <header class="topbar">
+          <div class="header-left">
+            <h1 class="page-title">Phone Flight Display</h1>
+            <div class="last-updated">Last Updated: 22 Jan 2026 09:40 AM</div>
+          </div>
+          <div class="header-right">
+            <a class="nav-button" href="in-progress.html">Back to In-Progress</a>
+          </div>
+        </header>
+        <section class="phone-stage">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-header">
+                <div class="phone-airline">Critical Flight Monitor</div>
+                <div class="phone-time" id="phone-time">17:26</div>
+              </div>
+              <div class="phone-tabs">
+                <button class="phone-tab is-active" type="button" data-tab="assigned">Assigned</button>
+                <button class="phone-tab" type="button" data-tab="completed">Completed</button>
+              </div>
+              <div class="phone-updated">
+                Last Updated <span>17:29</span>
+              </div>
+              <div class="phone-note">Flight details may change without notice. Please check again closer to departure.</div>
+              <div class="phone-list" id="phone-list">
+                <div class="phone-row" data-flight="SQ 120" data-destination="SIN" data-status="assigned" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">10:05</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A1</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">SQ 120</span>
+                      <span class="phone-flight-dest">Singapore (SIN)</span>
+                    </div>
+                    <div class="phone-meta">
+                      GOT <span class="phone-got">09:40</span> ·
+                      ETD <span class="phone-etd">11:10</span> ·
+                      STD <span class="phone-std">10:55</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="MH 121" data-destination="KUL" data-status="assigned" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">09:50</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A3</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">MH 121</span>
+                      <span class="phone-flight-dest">Kuala Lumpur (KUL)</span>
+                    </div>
+                    <div class="phone-meta">
+                      GOT <span class="phone-got">09:55</span> ·
+                      ETD <span class="phone-etd">11:20</span> ·
+                      STD <span class="phone-std">11:05</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="TG 122" data-destination="BKK" data-status="completed" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">10:15</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A1</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">TG 122</span>
+                      <span class="phone-flight-dest">Bangkok (BKK)</span>
+                    </div>
+                    <div class="phone-meta">
+                      GOT <span class="phone-got">10:05</span> ·
+                      ETD <span class="phone-etd">11:30</span> ·
+                      STD <span class="phone-std">11:10</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="CX 123" data-destination="HKG" data-status="assigned" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">10:40</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A7</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">CX 123</span>
+                      <span class="phone-flight-dest">Hong Kong (HKG)</span>
+                    </div>
+                    <div class="phone-meta">
+                      GOT <span class="phone-got">10:20</span> ·
+                      ETD <span class="phone-etd">11:45</span> ·
+                      STD <span class="phone-std">11:30</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="JL 124" data-destination="NRT" data-status="completed" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">11:05</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A8</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">JL 124</span>
+                      <span class="phone-flight-dest">Tokyo (NRT)</span>
+                    </div>
+                    <div class="phone-meta">
+                      GOT <span class="phone-got">10:35</span> ·
+                      ETD <span class="phone-etd">12:00</span> ·
+                      STD <span class="phone-std">11:45</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="KE 125" data-destination="ICN" data-status="assigned" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">10:55</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A10</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">KE 125</span>
+                      <span class="phone-flight-dest">Seoul (ICN)</span>
+                    </div>
+                    <div class="phone-meta">
+                      GOT <span class="phone-got">10:50</span> ·
+                      ETD <span class="phone-etd">12:15</span> ·
+                      STD <span class="phone-std">12:00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="QF 126" data-destination="SYD" data-status="completed" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">11:20</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A12</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">QF 126</span>
+                      <span class="phone-flight-dest">Sydney (SYD)</span>
+                    </div>
+                    <div class="phone-meta">
+                      GOT <span class="phone-got">11:05</span> ·
+                      ETD <span class="phone-etd">12:30</span> ·
+                      STD <span class="phone-std">12:10</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const gates = [
+        "A1",
+        "A2",
+        "A3",
+        "A7",
+        "A8",
+        "A10",
+        "A12",
+        "B1",
+        "B4",
+        "B7",
+        "C3",
+        "C9",
+      ];
+
+      const pad2 = (value) => String(value).padStart(2, "0");
+
+      const randomTimeMinutes = () => {
+        const hour = 9 + Math.floor(Math.random() * 5);
+        const minute = Math.floor(Math.random() * 60);
+        return hour * 60 + minute;
+      };
+
+      const formatTime = (totalMinutes) => {
+        const hour = Math.floor(totalMinutes / 60) % 24;
+        const minute = totalMinutes % 60;
+        return `${pad2(hour)}:${pad2(minute)}`;
+      };
+
+      const randomGate = () => gates[Math.floor(Math.random() * gates.length)];
+
+      const updateList = () => {
+        const rows = Array.from(document.querySelectorAll(".phone-row"));
+        rows.forEach((row) => {
+          const gateCell = row.querySelector(".phone-gate");
+          const rtCell = row.querySelector(".phone-rt");
+          const gotCell = row.querySelector(".phone-got");
+          const etdCell = row.querySelector(".phone-etd");
+          const stdCell = row.querySelector(".phone-std");
+          let base = randomTimeMinutes();
+          const rt = base;
+          const got = rt + 8 + Math.floor(Math.random() * 6);
+          const etd = got + 12 + Math.floor(Math.random() * 8);
+          const std = etd + 10 + Math.floor(Math.random() * 8);
+          if (gateCell) {
+            gateCell.textContent = randomGate();
+          }
+          if (rtCell) {
+            rtCell.textContent = formatTime(rt);
+            row.dataset.rtMinutes = String(rt);
+          }
+          if (gotCell) {
+            gotCell.textContent = formatTime(got);
+          }
+          if (etdCell) {
+            etdCell.textContent = formatTime(etd);
+          }
+          if (stdCell) {
+            stdCell.textContent = formatTime(std);
+          }
+        });
+
+        rows
+          .sort((a, b) => Number(a.dataset.rtMinutes) - Number(b.dataset.rtMinutes))
+          .forEach((row) => row.parentElement.appendChild(row));
+      };
+
+      const setActiveTab = (status) => {
+        document.querySelectorAll(".phone-tab").forEach((tab) => {
+          const isActive = tab.dataset.tab === status;
+          tab.classList.toggle("is-active", isActive);
+        });
+        document.querySelectorAll(".phone-row").forEach((row) => {
+          row.hidden = row.dataset.status !== status;
+        });
+      };
+
+      document.querySelectorAll(".phone-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          setActiveTab(tab.dataset.tab);
+        });
+      });
+
+      const buildDetailsUrl = (row) => {
+        const params = new URLSearchParams({
+          flight: row.dataset.flight || "",
+          dest: row.dataset.destination || "",
+          gate: row.querySelector(".phone-gate")?.textContent || "",
+          rt: row.querySelector(".phone-rt")?.textContent || "",
+          got: row.querySelector(".phone-got")?.textContent || "",
+          etd: row.querySelector(".phone-etd")?.textContent || "",
+          std: row.querySelector(".phone-std")?.textContent || "",
+        });
+        return `flight-details.html?${params.toString()}`;
+      };
+
+      const handleRowActivate = (row) => {
+        window.location.href = buildDetailsUrl(row);
+      };
+
+      document.querySelectorAll(".phone-row").forEach((row) => {
+        row.addEventListener("click", () => handleRowActivate(row));
+        row.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            handleRowActivate(row);
+          }
+        });
+      });
+
+      const updateClock = () => {
+        const now = new Date();
+        const time = `${pad2(now.getHours())}:${pad2(now.getMinutes())}`;
+        const timeNode = document.getElementById("phone-time");
+        if (timeNode) {
+          timeNode.textContent = time;
+        }
+      };
+
+      updateList();
+      setActiveTab("assigned");
+      updateClock();
+      setInterval(updateClock, 60 * 1000);
+    </script>
+  </body>
+</html>

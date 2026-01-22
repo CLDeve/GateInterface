@@ -468,14 +468,16 @@ body {
     font-size: 11px;
     letter-spacing: 0.02em;
     padding: 6px 8px;
-    gap: 4px 0;
-    grid-template-columns: 1fr;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
   }
 
   .in-progress-page .flight-times span {
     white-space: normal;
     line-height: 1.1;
     text-align: left;
+    display: block;
   }
 }
 @media (orientation: portrait) {
@@ -885,6 +887,10 @@ body {
   grid-template-columns: minmax(0, 1fr) 240px;
   gap: 18px;
   align-items: start;
+}
+
+.layout-split.no-alerts {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .alert-panel {
@@ -1938,6 +1944,364 @@ body {
 .alert-section .card-meta,
 .alert-section .card-times {
   color: rgba(255, 255, 255, 0.85);
+}
+
+.phone-page .frame {
+  background: linear-gradient(150deg, rgba(244, 247, 252, 0.95), rgba(225, 232, 242, 0.95));
+  border-color: rgba(10, 16, 26, 0.15);
+}
+
+.phone-stage {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0 24px;
+}
+
+.phone-shell {
+  position: relative;
+  width: min(320px, 90vw);
+  aspect-ratio: 9 / 19.5;
+  border-radius: 44px;
+  padding: 16px;
+  background: linear-gradient(160deg, #e9edf4, #cfd7e4 70%);
+  border: 2px solid rgba(10, 16, 26, 0.12);
+  box-shadow: 0 30px 60px rgba(21, 32, 52, 0.25);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38%;
+  height: 18px;
+  background: #0f1420;
+  border-radius: 0 0 16px 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.phone-screen {
+  height: 100%;
+  border-radius: 34px;
+  padding: 18px 16px 16px;
+  background: #f7f7f5;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.phone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.8);
+}
+
+.phone-airline {
+  font-weight: 600;
+}
+
+.phone-time {
+  font-family: "Space Mono", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+.phone-flight {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(18, 22, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 22px rgba(71, 121, 160, 0.18);
+}
+
+.phone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.phone-card {
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(20, 24, 32, 0.8);
+  display: grid;
+  gap: 6px;
+}
+
+.phone-tag {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.phone-value {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.phone-destination {
+  border-color: rgba(255, 179, 86, 0.55);
+  background: linear-gradient(140deg, rgba(255, 179, 86, 0.2), rgba(20, 24, 32, 0.85));
+}
+
+.phone-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.phone-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11px;
+}
+
+.phone-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(18, 22, 30, 0.8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phone-list-header {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.7);
+  padding: 0 4px;
+}
+
+.phone-tabs {
+  display: flex;
+  gap: 18px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.55);
+  padding: 6px 2px 8px;
+  border-bottom: 2px solid rgba(15, 23, 42, 0.1);
+}
+
+.phone-tab {
+  background: transparent;
+  border: none;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  padding: 0 0 6px;
+  cursor: default;
+  border-bottom: 3px solid transparent;
+}
+
+.phone-tab.is-active {
+  color: #0f172a;
+  border-bottom-color: #1e4ed6;
+  font-weight: 600;
+}
+
+.phone-updated {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(15, 23, 42, 0.7);
+}
+
+.phone-updated span {
+  font-weight: 700;
+}
+
+.phone-note {
+  font-size: 11px;
+  color: rgba(15, 23, 42, 0.5);
+  line-height: 1.4;
+}
+
+.phone-list {
+  display: grid;
+  gap: 0;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.phone-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.phone-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  padding: 14px 6px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  align-items: start;
+}
+
+.phone-time-col {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.phone-time-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.phone-gate-label {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.55);
+}
+
+.phone-main {
+  display: grid;
+  gap: 4px;
+}
+
+.phone-flight-line {
+  display: grid;
+  gap: 4px;
+}
+
+.phone-flight-no {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.phone-flight-dest {
+  font-size: 13px;
+  color: rgba(15, 23, 42, 0.75);
+}
+
+.phone-meta {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: rgba(15, 23, 42, 0.7);
+  white-space: nowrap;
+}
+
+.phone-meta .phone-gate,
+.phone-meta .phone-rt,
+.phone-meta .phone-got,
+.phone-meta .phone-etd,
+.phone-meta .phone-std {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.phone-row[role="button"] {
+  cursor: pointer;
+}
+
+.phone-row[role="button"]:focus-visible {
+  outline: 2px solid #1e4ed6;
+  outline-offset: 2px;
+}
+
+.flight-detail .detail-header {
+  display: grid;
+  gap: 8px;
+}
+
+.detail-flight-no {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detail-destination {
+  font-size: 18px;
+  color: rgba(15, 23, 42, 0.8);
+}
+
+.detail-status {
+  align-self: start;
+  background: #e6f4e7;
+  color: #1a7f43;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.detail-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 10px 0 6px;
+  color: rgba(15, 23, 42, 0.8);
+}
+
+.detail-route-line {
+  font-size: 20px;
+}
+
+.detail-times {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px 0 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.detail-times strong {
+  display: block;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.detail-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.detail-card strong {
+  display: block;
+  font-size: 18px;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+
+@media (max-width: 520px) {
 }
 
 @media (max-width: 860px) {

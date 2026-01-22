@@ -1,0 +1,409 @@
+[2a. Administration #7] 1. Include functionality to identify and report potential role conflicts within the access control structure. This helps prevent situations where a single user may have conflicting or incompatible duties.  For example, employees given access rights to update rosters shall not be able to update a roster which he/she is assigned to.
+[2a. Administration #15] Have the capability to automatically archive data as “housekeeping” to maintain only active data in the system.  This shall be governed by rules e.g. User has not been rostered for 30 days or User has not performed a shift in 30 days, e.g. Rosters are archived after 12months post-execution, but retained for a minimum of 7 years.
+[2a. Administration #21] The solution must support configurable employee attributes to enable accurate rostering, role assignment, and compliance tracking.
+[2a. Administration #27] The solution must support accurate and automated interpretation of timesheet data in line with applicable industrial awards, enterprise agreements, and company policies. It must be capable of applying complex working conditions such as overtime, shift differentials, and allowances, and provide flexibility to accommodate different rules by employee type, business unit, and union agreements. The interpreted data must integrate seamlessly with SAP SuccessFactors Employee Central Payroll for processing.
+[2a. Administration #33] 3) Short Shift Allowance (EBA)
+[2a. Administration #34] 4) Broken Shift Allowance (EBA)
+[2a. Administration #56] The system must support the integration process for new third-party systems to and from the NGRS framework. (AEMS, EJobCard, ATONCE, TITUS, RCMS, CADENCE, MASS+, Preboard Module, Allegro, LTMS, SF, SAP WBS)
+[2a. Administration #58] The system must be capable of identifying the Business Unit (BU), Segment, or Division to which Assignment A belongs by tagging the organizational unit to the respective officer
+[2a. Administration #62] The system must support the creation and onboarding of new shift patterns, which can be tagged to officers or demand, and must include the specification of start and end dates
+[2a. Administration #87] The system should be configurable to add, delimit, or create new constraints based on regulatory bodies' requirements.
+
+1) During monthly rostering, officer assignment to demand, mass upload, or job reconciliation, a hard stop function should be activated if the officer does not meet the hard constraints.
+
+Hard Constraints include:
+
+    MOM Regulations
+    PLRD Regulations
+    APGD Regulations
+    PWM Regulations
+    Certis Policy (e.g., CDRC)
+    Traffic Police Regulations
+
+Examples of constraints:
+a) Driving/Riding License
+b) PLRD License Expiry and Notification
+c) Regulatory Courses (Qualifications captured in SAP) such as:
+       -HCTA/RTT
+       -PGPS
+       -PAGPD
+       -CDRC
+d) Casino Regulatory Act
+e) Monthly OT Hours (72 hours)
+f) Daily Hours (13/14 hours) - system should be configurable
+g) Monthly Maximum Hours
+h) Weekly hours/Number of maximum working days for Part-Timers
+i) D-10 Rest Hours
+j) Maximum Number of working days - 12 consecutive days
+k) 1 OFF Day per week
+l) OFF Day Consent
+m) Others"
+
+2) Table to maintain soft/hard constraints
+3) In built approval process to overide soft/hard constraints
+4) Exception Table / Rule Break to input the period to override soft/hard constraints
+5) All constraints should be configureable by product type, scheme, employment status (full/part timer), rank & nationality.
+[2a. Administration #90] The system should be capable of managing redeployment across different sites and handling changes in officer deployment
+[2a. Administration #94] The system should include a monitoring dashboard for deployment status, featuring alerts and call-to-action functions, such as a configurable shortfall dashboard
+[2a. Administration #98] The system should process split demand APO with an additional 30 minutes at the start and end of the shift. The G4-Tolerance setting should ensure that this does not conflict with training attendance, preventing any porting failures
+[2a. Administration #107] The ssyetm must support end-to-end off-boarding processes and integration with Certis system
+[2a. Administration #109] The system should manage break schedules as follows: a) Scheme A (APO) requires an 8-hour rest period before the next shift. b) Flexi scheme requires a 1-hour interval before the next shift. c) The system should block shift swaps or change workdays to off days if the criteria are not met, with a push feature to sync the roster.
+[2b. Planning #2] Roster Forecasting.
+[2b. Planning #3] The solution must able to generate roster patterns that optimise cost-efficiency while ensuring full compliance with applicable industrial instruments
+[2b. Planning #4] The solution must dynamically adjust workforce schedules based on forecasted demand (i.e. passenger throughput at a screening point). The system must ensure compliance with all relevant labor regulations and support the creation of cost-effective, efficient rosters that maintain high service standards during varying demand periods.
+[2b. Planning #6] Standard Roster Types
+[2b. Planning #7] The solution must support the creation and management of configurable roster templates to accommodate a range of operational needs, including rotating shift patterns, demand-driven schedules, standard business weeks, and event- or project-based deployments.
+[2b. Planning #8] Special Roster Types
+[2b. Planning #9] Include capability to create unique roster types:
+[2b. Planning #10] Multi Chain Pattern  -   Multi Chain Roster Patterns are a specific type of Roster Model that allows employees to switch rosters based on planned demand or workload requirements.  This Roster Model is designed to account for fluctuating coverage requirements from week to week. The Multi-Chain Roster is composed of one or more “demand” rosters, that once built allows for employees to switch throughout each roster based on a defined date driven basis.  This design allows for:
+[2b. Planning #12] 2. Automatic activation/de-activation of Roster Patterns based on defined dates
+[2b. Planning #13] 3. This allows multiple child/sub rosters to be attached to a single master roster. These rosters can then be date triggered based on varying demand. Personnel inherit the same line number in the roster when switching child rosters.
+[2b. Planning #14] 4 The solution must support advanced rostering models that enable flexible scheduling in response to variable demand patterns.
+
+The system must allow automatic activation or deactivation of roster patterns based on planned operational demand.
+
+The solution must enable planners to create optimised rosters that meet operational requirements while minimising labour costs. It should support various workforce types including part-time, casual, resource contractors, and support flexible options such as split shifts.
+
+The solution must support rostering across multiple cost centres, allowing resource sharing and optimisation across business units to improve workforce utilisation.
+[2b. Planning #15] Cost Minimization through Roster Design
+[2b. Planning #16] Flexible scheduling – allow Roster Planners various scheduling options including Split Shifts, Part–time work, Resource Contractors, to fill rosters with the lowest cost possible.
+[2b. Planning #21] Special Roster Rules
+[2b. Planning #23] (a) Mandatory rest period between rostered shifts (fatigue rules) – capability to configure a rule of minimum hours of rest between rostered shifts (e.g. 8 hours from end of Shift 1 to start of Shift 2)
+[2b. Planning #26] (d) Limit maximum Overtime (fatigue rules)  – capability to l imit the maximum hours of work to 60hrs per week, or an average of multiples of 60hrs based on Roster Cycle, i.e. 120hrs over 2-week cycle, 180hrs over 3-week cycle, 240hrs over 4-week cycle or 480hrs over an 8-week cycle.
+[2b. Planning #29] 5. Unpredictability rules – can automatically fill a roster by selecting one or more employees per product type (e.g. armed guard, service concierge), to form a team assigned to a Task.   The following rules shall apply:
+[2b. Planning #30] (a) no officer shall be rostered with the same Team for more than 1 day consecutively.
+[2b. Planning #32] 6. Rostering Reserve/Relief employees to fill billable demands  – have the capability to automatically roster reserve/relief group of employees into multiple unfilled billable demands without impact on the original reserve/relief shift pattern.
+[2b. Planning #35] 9. Hard-protect roster slot  s.  Ensure that shifts which were assigned based on Shift Swap or Self-Bid methods are NOT subject to change when the roster is re-generated.  These slots are protected from any automatic change.
+[2b. Planning #36] 10. Ability to apply Global Changes according to one or more attributes e.g. change shift pattern of all employees belonging to a single product/Position/level type.
+[2b. Planning #41] Please specify the duration for which the roster allows updates to backdated entries
+[2b. Planning #45] The system must support the functionality that allows users to indicate whether a roster entry is PLRD payable at the demand level.
+[2b. Planning #61] The system must support the functionality that allows users to group roster entries
+[2b. Planning #62] The system must support the functionality that allows tagging of roster entries with details such as geo-fencing, facial recognition of assignments, addresses, and grouping of assignments across multiple sites.
+[2b. Planning #63] The system must support the functionality of the system that allows users from Business Unit A to view and amend demand from Business Unit B, including the ability to share roster functions if required
+[2b. Planning #64] The system must support the functionality that restricts CRP (resource partner) users to view only their own roster, unless additional permissions are granted
+[2b. Planning #67] The system must support the functionality that allows for the amendment of existing demand, including changes to allowances, shift patterns, rank, and coverage
+[2b. Planning #71] The system must be capable of managing unplanned changes to permanent assignments, such as changes in location, duty post, or shift timing for a particular date
+[2b. Planning #73] The system must support the functionality that allows the assignment of an operations unit in charge by plant, planner group, and demand for reporting purposes
+[2b. Planning #76] The system must support the functionality that provides training schedule validation, including hours achieved, overtime, and fatigue management, and its synchronization with SAP.
+[2b. Planning #77] The system must support the functionality that allows for automated team formation based on predefined rules, such as skill sets, the number of staff per team, regulatory compliance, and frequent rotation of team members
+[2b. Planning #80] Roster timing able to amend base on client requirement on daily basis.Refer to dynamic rostering
+[2b. Planning #82] The system must validate all scheduled training against regulatory requirements and overtime constraints to ensure compliance before deployment.
+[2b. Planning #86] The system need to ensure compliance with Auxiliary Police Officer (APO) APGD D10 (Regulatory) by mandating a minimum of 8 hours of rest between each working shift. *Police Licensing and Regulatory Division (PLRD), Police Force Act(PFA) and Auxiliary Police General Directive (APGD).
+[2b. Planning #87] The system must ensure the definition of a shift must align with S4 HANA standards, such as 0001 to 2359 or specific shifts like 8pm to 8am
+[2b. Planning #88] The system must support the Employee Group Flexi is provided with a minimum of 1 hour of rest between shifts. To provide Employee Group Flexi an option if to deduct a minimum 1hr of rest between shift.
+[2b. Planning #89] The system must support automatic roster splitting when switching from roster 1 to roster 2
+[2b. Planning #90] The system must support the specify allowances based on product type, employee group, and scheme within the same demand/roster
+[2b. Planning #91] The system must support the implementation of the daily and weekly checks to ensure that resignees are removed from the roster and demand.
+[2b. Planning #92] The system must support to ensure that any changes to officer or roster timings made mid-month are consistently applied to subsequent days.
+[2b. Planning #96] The system must support that roster and time evaluation are consistent, including substitution (work schedule rule).
+[2b. Planning #108] Requirement: End-to-End Auto Rostering Process
+The system must provide a comprehensive end-to-end process for auto rostering, including demand-based rostering, officer-based rostering, and event-based rostering. Additionally, the system must have the capability to roster by groups, which can be categorized by assignment, officer, or operational unit.
+[2b. Planning #111] The system must allow for the manual triggering of rosters. It should support automated rostering based on shift patterns and product types. Additionally, new joiners who start mid-week or mid-month must be automatically rostered without disrupting the existing roster. The system must also ensure compliance with regulatory requirements.
+[2b. Planning #118] The system must automatically remove employees from the generated roster if there are any changes to their qualification expiry date, qualification revocation, work permit expiration, or employee contract expiration.
+[2b. Planning #119] The system must determine the officer shift sequence and specify the dates for Officer A's off days. It should support customizable shift patterns, such as WWOOWW or WWWOWWWWO. If the shift pattern breaches regulatory constraints or hours, the system must prompt for action, such as removing the last few days or adjusting the deployment to comply, while also allowing the acceptance of higher hours if necessary.
+[2b. Planning #120] The system must determine officer shifts, including day, night, and other shift types. This should be facilitated through a user-friendly interface, such as a dashboard or portal.
+[2b. Planning #121] The system must be capable of assigning Certis Staff IDs to resource contractor (RC) staff and linking this information to SAP. For part-timers, the system should onboard them as full-timers and ensure that rostering complies with regulatory requirements for their employee group. Additionally, the system must allow part-timers to book available shifts and schedule reports to be sent to the operational unit.
+[2b. Planning #122] The system must have the capability to automatically roster new recruits who are posted mid-month.
+[2b. Planning #123] The system must automatically remove officers from the roster if they are banned from an assignment. This includes:
+
+    Tier 1: Officers who cannot work at all.
+    Tier 2: Officers who can be blacklisted by customers or certain sites. If an armed officer is debarred from carrying arms, they can still be deployed to unarmed assignments without violating regulations.
+[2b. Planning #125] The system must ensure that if an officer's hours exceed 72 hours during rostering, the process must stop until the day that exceeds the limit. For manual entries, the system should block further rostering. In cases of exemptions, there must be a separate table to input the exemption period, staff ID, group, demand, product type, scheme, and assignment. Additionally, the system should provide a dashboard or report showing the overtime hours plus the roster for the month, including tolerance and confirmed hours.
+[2b. Planning #126] The system should include a Digital Twin feature to perform simulations of rosters, such as changes in shift patterns or cost simulations, without affecting the existing roster
+[2b. Planning #128] The system must be capable of reading data from third-party sources, such as OFF Day Consent, while performing the monthly roster run. This includes integration with systems like Allegro, TITUS, AEMS, Argus, and Cadence, with the data reflecting in NGRS.
+[2b. Planning #129] The system must be capable of managing the reserves roster by automatically rostering standby officers into unfulfilled demands after the core officers have been fully deployed.
+[2b. Planning #132] The system must be capable of running a roster by officer ID, such as for new officers, without affecting the existing roster. It should automatically roster new officers without disrupting the current schedule.
+[2b. Planning #133] The system must be capable of running dynamic or outcome-based rosters based on client requirements. For example, it should be able to schedule different off-day patterns, such as having Saturdays off at the beginning and end of the month, and Sundays off in between.
+
+Attach examples such as Custom Roster (CLS) and CAS, which illustrate different shift timings within the shift cycle.
+[2b. Planning #135] The system must have an alert function to inform officers who are underutilized or overutilized. According to officer contracts, groups of officers need to meet a minimum contractual working hours per month. The system should generate reports comparing officers' upcoming deployment with their available status versus the working hours achieved. Additionally, a dashboard should flag any discrepancies.
+[2b. Planning #136] The system must be capable of managing mass roster changes, such as when a site is dismounted, officers are redeployed to another assignment, or there is a change in shift patterns.
+[2b. Planning #137] The system must be capable of identifying when a roster needs to be regenerated due to changes in allowance, coverage, or demand location. For example, while a change in allowance may not necessitate regeneration, a change in shift pattern would require the roster to be regenerated.
+[2b. Planning #138] The system must have a logic for equal overtime allocation during rostering. For example, in a monthly roster run with 69 hours of overtime, the system should distribute the overtime equally across the roster. Moving forward, the system should also consider optimizing shift hours or shift patterns.
+[2b. Planning #140] Overtime Alert System: Once the roster is generated, the system should be capable of sending alerts to available officers to perform overtime and cover any planned shortfall. This includes automatically prompting officers, especially part-timers, for job bidding.
+
+Shortfall Detection and Notification: The system should detect any shortfall and send notifications to qualified staff to fill the job.
+Outcome-Based Reminders: The system should provide reminders about the shortfall specifically for part-timers.
+[2b. Planning #142] Amendable Work Item Location: The system should allow the location of demand or work items to be amended after creation. This includes accommodating last-minute changes to the roster on the same day.
+
+Last-Minute Location Updates: The system should support last-minute changes in the longitude and latitude of work item locations.
+[2b. Planning #147] New Joiner Roster Management: The system should allow the creation of rosters for new joiners who are pending qualification. This includes managing skillsets and licenses, and generating blank rosters for internal demand.
+Non-Constraint Demand Handling: The system should be capable of handling non-constraint demand, ensuring flexibility in roster management.
+[2b. Planning #148] The system enables the locking of the roster or the implementation of a freezing window within the roster
+[2b. Planning #149] The system allows for self-service rostering for various internal functions, such as the ad-hoc assignment of officers to operational units. Through the BU Internal Share Pool, supervisors can access officers and assign them to ad-hoc tasks
+[2b. Planning #151] The system allows for mass changes in the roster, including the manual adjustment of officer rosters
+[2b. Planning #152] The system should be configurable to add, delimit, or create new constraints based on regulatory bodies' requirements.
+
+1) During monthly rostering, officer assignment to demand, mass upload, or job reconciliation, a hard stop function should be activated if the officer does not meet the hard constraints.
+
+Hard Constraints include:
+
+    MOM Regulations
+    PLRD Regulations
+    APGD Regulations
+    PWM Regulations
+    Certis Policy (e.g., CDRC)
+    Traffic Police Regulations
+Examples of constraints:
+a) Driving/Riding License
+b) PLRD License Expiry and Notification
+c) Regulatory Courses (Qualifications captured in SAP) such as:
+       -HCTA/RTT
+       -PGPS
+       -PAGPD
+       -CDRC
+d) Casino Regulatory Act
+e) Monthly OT Hours (72 hours)
+f) Daily Hours (13/14 hours) - system should be configurable
+g) Monthly Maximum Hours
+h) Weekly hours/Number of maximum working days for Part-Timers
+i) D-10 Rest Hours
+j) Maximum Number of working days - 12 consecutive days
+k) 1 OFF Day per week
+l) OFF Day Consent
+m) Others"
+2) Table to maintain soft/hard constraints
+3) In built approval process to overide soft/hard constraints
+4) Exception Table / Rule Break to input the period to override soft/hard constraints
+5) All constraints should be configureable by product type, scheme, employment status (full/part timer), rank & nationality.
+[2b. Planning #153] The system must support the rostering and attendance tracking of personnel on light duty assignments. Personnel on light duty are to be scheduled under standard office hours, which differ from their regular shift patterns. This attendance must be clearly distinguished from normal shift-based working hours and appropriately reflected in the system, including assignment and reporting functionalities
+[2b. Planning #155] Allow for extraction of roster in a scalable UI format for ground supervisors to have oversight
+[2b. Planning #157] System to have optimised coverage to meet assignment specific parameter
+[2b. Planning #159] Job schedule should be able to have a 5.5days coverage and if the day is a PH, the coverage will be reduced.
+[2b. Planning #160] Automated rostering to cater to changes in reporting locations for the same assignment islandwide which client will only give notification 3 days in advance, i.e day 1 at City Hall MRT, day 2 at Raffles place MRT
+[2b. Planning #162] The system should allow for the tabulation of allowances based on working hours performed or demand. For MRS, allowances are based on demand, with HR setting up allowance codes, considering factors such as nationality and skillset constraints.
+
+Detail requirements:
+
+1) The system should be configurable by product type, scheme, employment status (part-time/full-time), rank, and nationality.
+2) Allowances should be tagged to either the officer or the job.
+3) A specific allowance amount ($x) should be paid if an officer works on Saturday, and a different amount ($Y) if the officer works on both Saturday and Sunday in the same assignment.
+4) An exemption table should be available to exclude officers based on scheme, rank, PWM status, and nationality.
+5) Different allowance amounts should be paid for weekday work ($x) and weekend work ($y) within the same assignment.
+6) Full-time officers should receive a festive incentive if they work on any demand on stipulated days.
+7) The system should allow tagging allowances to expired demands.
+8) Special allowances should be configurable for specific days or dates, allowing for an increase from $X to $Y for particular days/dates.
+9) Specific officers deployed in the same area should receive a certain allowance ($x), while others working on the same assignment may not be entitled.
+10) Allowances should be paid out by product type, for example, only to full-time officers in the SO product.
+11) An urgent activation allowance should be paid if officers are recalled to cover shortfalls.
+12) Allowances should be classified and tabulated on an hourly, daily, or monthly basis.
+13) Other allowances should include completion bonuses, festive incentives, and urgent activation allowances.
+14) The system should allow for the amendment of allowances on the actual day with approval.
+15) The system should be configurable to ensure that even if two officers have the same skill set, rank, and product type, only one may receive the allowance.
+16) HQ reserved allowances should be supported.
+[2b. Planning #178] The system should facilitate the rostering, assigning, and updating processes for Certis Resource Partner to roster the staff.
+[2b. Planning #181] The system should allow access and assignment of shifts to Resoure Partner
+[2b. Planning #182] The system should restrict access so that each Resource Partner can only view their own roster and manage their rostering, assignment, and demand reconciliation.
+[2b. Planning #189] Assignment Creation and Management
+1. User-friendly interface for creating and editing assignments.
+2. Customizable fields for assignment details (e.g., title, description, mounting date).
+3. Review and approval workflow.
+4. Submission and updating of documents.
+5. Create assignment for specific resource partner.
+6. Real-time tracking of assignment status (e.g., pending document, pending signature, allocation assigned).
+7. Notifications for status changes.
+8. Renewal of existing assignments.
+9. Creation of educational qualifications.
+[2b. Planning #190] Officer Management:
+1. Online registration form for new officers with detailed officer profiles including contact information, rank, department and certifications.
+2. Ability to update, maintain and view officer information.
+3. Required documentation upload (e.g., identification, certifications).
+4. Automated verification process.
+5. Creating of Certis staff ID after accepting the officer.
+6. Edit officer's status such as blacklisted, unassign.
+7. Assigning shift (s) to individual officer.
+8. Shift scheduling and management.
+9. Update educational qualifications such as skillsets.
+10. Update regulatory qualifications such as security license expiry, AO application, AO cessation, LTA AO, medical records for officers who are 60 years old & above.
+11. Document expiration alerts and renewal reminders for educational and regulatory qualifications.
+12. Update Certis internal qualifications such as induction attendance and OJT dates.
+13. Extract and Export Site and Officer Deployment Data as CSV file.
+14. Create a summary report that lists officers with expired qualifications.
+Include relevant details such as the type of qualification, expiration date, and any actions taken or required.
+[2b. Planning #192] Attendance Verification
+1. Import and Display Attendance Data from Certis attendance system.
+2. Flag discrepancies between Attendance Data and Officer Site Deployment Data.
+3. Allow Resource Partners to verify Attendance Data in the system.
+4. Allow Resource Partners to appeal Attendance Data discrepancies in the system.
+5. Auto generation of Liquidated Damages and Credit Notes based on verified Attendance Data
+6. Auto generation of Notices based on Mounting Start Date, Contractual Rates, Liquidated Damages and Credit Notes.
+7. Liquidated Damages Waiver and approval workflow
+8. Manage statuses of these Invoices and initiate payment to Resource Partners.
+[2b. Planning #196] The NGRS system will utilize AI to consolidate all planned and actual day shortfall data based on the final reconciled roster. It will then automatically send the final shortfall status to the Management Staff
+[2b. Planning #199] The system should feature a Digital Twin with AI capabilities to propose optimal shift schedules. This will dynamically adjust the roster to prevent over or under-utilization
+[2b. Planning #200] The system should have AI enabled feature to assist in optimizing team rotations
+[2b. Planning #202] The system should be AI-enabled to track officer arrivals at sites using various peripherals/systems. For example, in the case of APO deployment, an alternative method to determine an officer's location could be tracking their firearms
+[2b. Planning #205] The system should be AI-enabled to provide predictive analysis by analyzing previous year data for comparison and recommendations (e.g., manpower, duty posts, absences). It should propose alternative roster and deployment plans during festive periods to minimize shortfalls and recommend the ideal number of Certis Resource Partners required to mitigate the shortfall
+[2b. Planning #207] The system should feature AI capabilities to identify available and qualified officers and propose alternative rostering and deployment options during peak periods to minimize operational disruptions to existing permanent operations. It should also include a Cost Benefit Analysis for the different options within the BU to fulfill the requirement
+[2b. Planning #209] The system should feature an AI-enabled chatbot to provide answers and follow-up actions required by officers, such as queries on payroll, deployment, and rostering matters.
+[2b. Planning #211] The system should feature an error detection mechanism with a notification system to alert officers about attendance discrepancies, such as those identified after end-of-shift checks
+[2b. Planning #213] Roster optimisation able to indicate or flag requirement for posting prioritisation(System to detect the holding officer pool vs assignment for upcoming posting /recruitment)
+[2b. Planning #220] The system should support the attempt time to be capture from Time attendance system will be available when the roster is updated within N hour. Validation of geo-location of the roster should be supported. When the roster is insert N hour, the backfill  of the attempt time will be inserted as clock-in/out time as reconciliation.
+[2b. Planning #223] The system should support integration between Cadence and rostering and allow certain feature as booking of shift , swap feature and change of work to off or cancellation of shift. Data should be sync between the 2 platforms
+[2b. Planning #224] The system should allow manual sync from Roster to Cadence, this should also include the porting of any assigned officer's ID and the associated constraints/allowances that were created
+[2b. Planning #225] The system should automatically align betwen billable time with planned internal demand to minimize the need for manual entries (if there is no clock in/out for split roster, system should recognise multiple roster to confirm the time attendance)
+[2b. Planning #226] The system should support NGRS Sliding Window adjustments, enabling the creation of demand or rosters within 7 days and the insertion of officers 7 days post-deployment (affliated with 301)
+[2b. Planning #227] The system should be capable of setting demand tolerance based on employee type. For example, part-time and full-time employees may share the same demand roster. This feature aims to reduce manual amendments in job confirmation by allowing the system to identify tolerance by employee type
+[2b. Planning #229] The system should include a logic check validation of the roster hours for officer when a user attempts to book a training. For example, a message should pop up to block the user from creating the booking if a violation has occurred. The violiation message should appear clearly on the error details. Report to be available to retieve the error of booking and details.
+[2b. Planning #230] The system should automatically send reminder emails to users when roster is nearing expiration to reduce the need for manual billing (email and configuable recipents), exclusion by Planner group, work item level, demand item.
+[2b. Planning #234] The system should include a Business Continuity Plan (BCP) to safeguard against operational or regulatory lapses. This plan should involve daily pushes of MRS/SAP details to SharePoint or email. The BCP should cover the following: a) Monthly Roster b) Off day counter - to guard against 12 consecutive days c) Achieved vs Maximum Hours - to guard against 72 hours breach, 35 hours breach, and D10 rule d) Officer Qualification e) Demand Constraint"
+[2b. Planning #239] The system should send notifications for any internal/ roster demand that has been created with apparoval workflow.
+[2b. Planning #240] The system should allow users to view the full roster of one/more officer on one page, featuring a new UI/UX for roster view. (view/ download by groups)
+[2b. Planning #249] The system should allow the bypassing of hard constraints via the manage roster constraints toggle for a single requested officer ID, rather than unlocking all demand items for the day.
+[2b. Planning #250] The system should ensure that the maximum allowable payable hours for flexi shifts is 12 hours after meal breaks. If officers have multiple short shifts in a day without at least an 8-hour break between them, SAP HR will not deduct any meal breaks, which could risk exceeding the 12-hour limit. Additionally, the maximum allowable roster hours should be configurable by employee group. The flexi roster should also include at least a 1-hour interval between each shift if there is more than one shift per day, configurable at the plant level
+[2b. Planning #251] The system should define MC as applicable for 24 hours of the day and replace it with 11 hours (Scheme A) or 8 hours (for other schemes) of paid hours as per regulations. This logic should not be incorrectly applied to night shift rosters where shift timings span across two days. Additionally, the system should prevent the incorrect deletion of training or adhoc deployment attendance upon the insertion of MC status
+[2b. Planning #252] The system should allow for post-deployment fencing and prompt a pop-up message to alert operations when removing an officer who has already clocked in and out via Titus
+[2b. Planning #253] The system should include a daily auto-rostering feature, primarily for new staff joining from CCU to BU. It should target officers who join the company in the middle of the month, identify those who are still under available status, and automatically roster them into demand
+[2b. Planning #255] The system should automate the generation of missing daily rosters. If a daily roster is missing due to demand creation during backend scheduling, the system should automatically generate it
+[2b. Planning #257] The system should have Report for comparation between Titus and rostering system on available and absent status e.g. TITUS record have been captured however the roster could be deleted and therefore the report will need to reflect the discrepancy
+[2b. Planning #259] The system should allow setting individual expiration dates for coverage, constraints, and shift patterns. Additionally, it should include expiration dates for demand details
+[2b. Planning #262] The system should allow officers to have individual rosters to prevent monthly re-runs from affecting other officers who already have the correct roster.
+[2b. Planning #265] The system will enable the MRS roster tolerance and scheme to be transferred, with a daily trigger hour
+[2b. Planning #271] Hard block rostering 24hrs shift for officer e.g. whitelist officer for day shift demand item but officer get rostered into same date for both day and night shift.
+[2b. Planning #272] To capture also prompt error if officer clock in for duty without roster
+[2c. Delivery #4] The system must support the creation and assignment of both simple and complex work patterns. These patterns should be applicable to individual employees or groups, with flexibility to accommodate varied roles, sites, or classifications.
+[2c. Delivery #5] The solution must provide visibility into forecasted demand, roster shortfalls, and unallocated shifts, enabling proactive workforce planning and timely resolution of coverage gaps.
+[2c. Delivery #6] The system must support the generation of cost-effective rosters by forecasting roster costs, including allowances, loadings, and overtime. It should promote fair and equitable distribution of work hours across the workforce, ensuring minimum target hours are met while reducing reliance on overtime. Where applicable, the system should highlight scheduling options with or without rule breaks to support informed decision-making.
+[2c. Delivery #7] The solution must support rule-driven automation for shift allocation, considering factors such as skills, availability, cost, qualifications, hours worked, and policy compliance. It should allow prioritisation of best-fit candidates for each shift based on configurable criteria.
+[2c. Delivery #10] The system must provide real-time notifications to roster planners for actions such as unallocated shifts, absences, no-shows, and policy violations (e.g., overtime breaches), supported by configurable workflows for approvals or overrides
+[2c. Delivery #12] The system should enable automated call-outs or shift offers, using preferred contact methods (e.g., phone, SMS, email), and apply defined criteria such as skill match, availability, cost, and fatigue to ensure rapid, compliant shift filling.
+[2c. Delivery #15] 15. Automatically Identifies the best-fit employees and fill open shifts based on one or more pre-defined criteria, in a prioritized manner to allow Roster Planner to select the best-fit employee
+[2c. Delivery #17] 16. Schedule employees in compliance with overtime rules based on seniority and other complex union requirements.
+[2c. Delivery #18] 17. Prompt/Notify Roster Planner to action on unallocated shifts.
+[2c. Delivery #19] 18. Mark Absent or No Show, where shift is unallocated or reassigned.
+[2c. Delivery #20] The system must enforce qualification and compliance rules at the time of shift execution, not just at the roster creation stage. It must prevent scheduling of unqualified personnel unless a configured exception process (workflow/approval) is in place.
+[2c. Delivery #24] 1. Delivery with cost optimisation – in the delivery of rosters and day-of-ops roster adjustments, calculate the forecasted roster costs (inclusive of allowance, loading and overtime) of   available options, presenting roster options with and without rule breaks.
+[2c. Delivery #25] 2. Fair and equitable rostering – include capabilities to manage a fair and equitable roster such that all employees share the available work hours and fulfill the minimum target hours, while minimizing overtime hours.
+[2c. Delivery #26] 3. Draft Roster Publishing – publish rosters up to 12 months in advance (and select rosters to be published to employees)
+[2c. Delivery #27] 4. Roster change management – allow draft rosters to be updated in the following ways:
+[2c. Delivery #30] 5. Manual roster upload    – support manual upload of a roster, created via a third party software e.g. Microsoft Excel, in the creation of a new roster and in amending an existing roster.
+[2c. Delivery #31] 6. Qualifications.  Restrict  rostering of personnel without the required qualification(s), with rule break(s) possible with workflow for approval/over-ride. Qualifications rules must be applied on day of shift and not day-of-roster creation.
+[2c. Delivery #34] 2. Re-assignment of unfilled shifts to employees, re-assign OFF Days.
+[2c. Delivery #35] 3. Shift-splitting to maximise workforce availability.
+[2c. Delivery #37] The solution must support real-time operational management by enabling visibility and responsiveness to workforce activity on the day of operation. It should include capabilities to monitor attendance, reassign shifts or rest days, and optimise workforce deployment through dynamic actions such as shift splitting. The system must provide actionable alerts and notifications with intuitive navigation to relevant functions, supporting timely decision-making and operational continuity.
+[2c. Delivery #40] Frontliner Mobility Solutions(Mobile App) - Work Schedule Management, the software shall have the capability to enable frontline employees to:
+[2c. Delivery #43] 3.	Accept or reject additional shifts (bid for shifts) as offered by Roster Planner.
+[2c. Delivery #48] 8.	Initiate and accept employee-to-employee shift swaps (with admin-configurable criteria for swap and auto-approve rules).
+[2c. Delivery #58] 3.	Schedule recurring communications as reminders, targeting specific employee groups/rosters.
+[2c. Delivery #66] The mobile solution must interface 2 way with the roster solution , SAP Employee Central and Operations system so that it enable employees to:
+[2c. Delivery #70] 4. Initiate or accept peer shift swaps, subject to configurable rules and approval settings
+[2c. Delivery #84] The system should include pre- and post-compliance check functions with alert capabilities. This includes alerts for unfulfilled billable demand, expiring qualifications, expiring demand, payable timing exceeding clocked hours, and officers without a roster. These alerts should be available in the form of reports or dashboards
+[2c. Delivery #85] Dynamic Business/Operations Intelligence Dashboard + Data Visualisation + data export and sharing (shortfall kpi, recruitment, total duty, manpower health status, absences, cost, simulation of roster, forecasted manpower required, optimising manpower for mega evants, past and future shortfall, violations)
+
+1) Alert/Notification with call to action feature  for the following
+i. License Expiring (PLRD/Work permit/SFA/AED)
+ii. Unfulfilled Demand for 1 Duty Post Assignment (i.e. Bank)
+iii. Failure to clock in for 1 Duty Post Assignment (i.e. Polyclinic)
+iv. Attendance Discrepancies not resolved by 3 days
+v. Failure to scan out after x hours
+vi. Failure to AEMS In/AEMS Out
+vii. Scan out earlier than contractual time for 01 DP/shift
+viii.AEMS Out earlier than contractual timing
+Ix.Titus Out at base before AEMS Out
+x, New Demand created (Billable/Internal)
+xi. Demand Expiring  (Billable/Internal)
+xii. Any constraints overriden w/o approval
+xiii. Breaching the daily max hours/ number of consecutive working days/monthly ot hours
+Example - Officer already clocked 72 hrs OT hours (achived +foreacasted),  alert to be send to SE/OM not to get officer to stand in
+xiv. Predictive underutilise/overutilise officers:
+[2c. Delivery #86] The system should feature Digital Twin Rostering to simulate new roster patterns, determine the required manpower, and identify sources for additional manpower during mega events
+[2c. Delivery #87] The system should feature an AI chatbot that allows users to request or query regarding roster or pay discrepancies, similar to the features available in Certis Forms
+[2c. Delivery #88] The system should have the capability to automatically schedule reports, such as validation of overtime and lateness e.g. report for lateness
+[2c. Delivery #90] The system should automatically schedule runs in the roster to update the white list and black list
+[2c. Delivery #91] The system should allow for the automatic update of overtime (additional hour) one hour before or after a shift. For example, CLS: certain assignments that will require extension, and CAS: certain rosters that will need this automatic update.
+[2c. Delivery #92] The system should update roster constraints and notify officers of their current roster constraints and assignments. For example, it should allow constraints templates to be tabulated to the demand with product type and rank
+[2c. Delivery #94] The system should support mass updates for demand coverage, shift patterns, constraints, headcount, allowances, and shift timings.
+[2c. Delivery #95] Automation with in built approval process
+1. Auto creation of internal demand with approval process
+2. Auto convert attendance to qualification with approval process
+3. Auto tagging/delimit of allowance with approval process
+4. Auto adjustment of allowance with approval process
+5. Auto configuration/creation of tolerance with approval process. Tolerance to be configurable by product type/Scheme/Plant/Assignment/employment status (part timer/full timer)
+6. Auto adjustment/delimit of tolerance with approval process. Tolerance to be configurable by product type/Scheme/Plant/Assignment/employment status (part timer/full timer)
+7. Auto Overide of constraint (soft/hard) with approval process by date/month/day range + storage for supporting documents
+8. Auto tagging/delimit/creation of constraints with approval process
+9. Auto amendment of constraints with approval process
+10. Auto adjustment/amendment of attendance with approval process + supporting documents
+11. Auto extension of demand with approval process (internal demand)
+12. Auto Singular/Mass tagging/changes of  shift pattern/contractual timing/allowances/constraints by date/month with approval process
+13.Auto Singular/ Mass Delimit Functions for shift pattern/allowance/contractual timing/constraints by date/ month with approval process
+14. Approval to create/delimit contraints in the constraints table (hard/soft constraints)
+[2c. Delivery #96] The vendor should explain how the NGRS system integrates with other systems to process billing. Specifically, how data such as job confirmations (JC), e-jobcards, Certis Forms (absences), physical jobcards and sign-offs, e-PARC, and TITUS Customer Portal views are pushed to the billing team.
+[2c. Delivery #100] The system must have the functionality to compile a list of operation and billing dashboards or reports e.g. Billing vs unbilled, shift confirmation, ejobcard status, TITUS shift confirmation, unassigned demands, unconfirm demands, submission of IRIM
+[2c. Delivery #106] The system should include a mobile app that sends notifications about daily schedule roster changes
+[2c. Delivery #107] The system should prompt the user before removing a roster if attendance has already been captured (planned start and end times).
+[2c. Delivery #108] The system should prompt a check for check-in and check-out records before removing a roster, for example, in cases of leave application errors.
+[2c. Delivery #112] To capture also prompt error if officer clock in for duty without roster
+[2c. Delivery #113] System to flag officer error for roster after Xhrs from planned start time
+[2c. Delivery #114] The system should include a mobile app to trigger officers "X" timing before shift start time to allow for acknowledgement so that relevant SE/OM can have better response time to cater for shortfall. Trigger timing must be scalable
+[2c. Delivery #116] Alow auto/dynamic extension of roster due to holdback / unable to stand down on the spot
+[2c. Delivery #117] Officer portal to acknowledge for upcoming deployment before X hrs from planned start time .Reference to Dynamic rostering
+[2d. Reconciliation #26] The system should be capable of recording the initial clock-in time at the start of a shift (Roster A). Even if there is a shift change (from Roster A to Roster B), it should capture the end shift time from Roster B. Additionally, the system must be able to track each demand allowance.
+[2d. Reconciliation #27] 1) For job reconciliation for payroll, system should be able to draw data from Titus, AEMS, Gallagher, Eparcs, AtOnce, Argus Log In to pay officers
+2) System should be able to reconcile attendance based on first in/last out for officers' who are deployed for multiple assignment within the single shift.
+3) System should be able to include the tolerance hours (travelling time) that have been set during the tolerance configuration when tabulating the total payable hours
+Example:
+a. Contractual Hours: 0800-2000
+Tolerance Set: 30 mins planned start time/30 mins planned end time
+Clock In/Out: 0745-2045
+Payable: 0745 - 2030
+b. Contractual Hours: 0800-2000
+Tolerance Set: 30 mins planned start time/30 mins planned end time
+Clock In/Out: 0715-2015
+Payable: 0730- 2015
+c.Contractual Hours: 0800-2000
+Tolerance Set: -1 mins planned start time/1 mins planned end time
+Clock In/Out: 0815-2015
+Payable: 0815- 2000hrs
+d.Contractual Hours: 0800-2000
+Tolerance Set: -1 mins planned start time/1 mins planned end time
+Clock In/Out: 0715-1945
+Payable: 0800- 1945hrs
+e. Contractual Hours: 0800-2000
+Tolerance Set: 0 mins planned start time/ 0mins planned end time
+Clock In/Out: 0715-1945
+Payable: 0800- 2000hrs
+3) System to guard the daily max hours and maximum hours for both system/manual reconciliation
+4) Remarks field to be made available for user to enter reason why manual reconciliation were performed
+5) Status of allowances/attendance reconciliation.
+6) System able to update new clocking data from Titus
+7) System able to auto confirm the attendance if meet the pre-set parameter.
+[2d. Reconciliation #28] 1)Tolerance to be configurable by product type/Scheme/Plant/Assignment/employment status (part timer/full timer)/customer/demand item
+Example:
+ 2 different product type (Full Timer/Part Timer) are assign to the same demand ID but only full timer are entitled for the tolerance hours, system should be able to differentiate the product type and payout the tolerance hours only to Full Timers.
+3) System able to maintain tolerance for Report time, muster time, billable start/end time, clocking time, payable start /end time.
+[2d. Reconciliation #33] To be able to optimise rest day OT and limit to 72 hours without incomplete monthly roster for officer(Officer roster to follow by assignment coverage instead of fix shift pattern)
+[2e. Reporting #3] 2. Have the capability to schedule the sending of reports to licensed users as well as to any specific email address.
+[2e. Reporting #8] 3. Unfilled Rosters – number of shifts that are unfilled in a roster
+[2e. Reporting #9] 4. rostering assignment performance (i.e.: manpower shortfall, unplanned absence)
+[2e. Reporting #16] 11. Manpower forecast to show manpower strength health status against rostering demand and to show if there are any spare manpower for new assignment. This is to allow Business Unit to decide if they can take in more business with the available manpower during the period.
+[2e. Reporting #28] Customisable report to be able to schedule to email
+[2e. Reporting #33] Contractual max and min hours report - Able to show officers not meeting the contractual requirement and to be able download or schedule report to specific email group.
+[2e. Reporting #64] Roster
+[3c. Performance-Scalability #5] 3. Stability – Cumulative Layout Shift (CLS) score of 0.1 or less.
+[3d. Support-Maintenance #2] Technical Support.  Provide in-house technical support that is NOT out-sourced to a third party and is available 24/7, ensuring priority response to critical issues (maximum 15mins response time) and their resolution within 6 hours. The technical support team must be contactable via a toll-free phone number .  All other issues must be reolved within 12 hours upon submission of request.
+Online Chat support to respond to non-critical queries is optional.
+[3e. Reliability-Availability #8] The vendor should provide information on the planned downtime schedule for the system
+[3e. Reliability-Availability #10] The vendor should advise on how users can extract the roster from NGRS when the system is down, so it can be referenced for withdrawing arm demand, such as drawing of arms
+[3f. Integration #12] (d) 3rd party system for Employee shift management (view roster, shift acceptance, shift swap, shift bidding, unavailability)
+[3f. Integration #15] The system should be capable of integrating with our existing systems (API-enabled), such as Pre-boarding and TITUS, to sync with AEMS and NGRS. All systems should be linked to NGRS.
+
+Existing Certis Systems:
+SuccessFactor
+TITUS
+AEMS
+Allegro
+Argus
+Optimax
+Certis Forms
+e-Jobcard
+Cadence
+eCSDS
+RCMS
+At-Once
+ePARC
+[3f. Integration #16] External System Integration: The system need to  integrate with external systems to push and pull data, and assign tasks to the correct demand if automatic team formation is not feasible.
+[3f. Integration #19] ARGUS/or deployment Dashboard
+Others (Ensuring scalability for future systems)
+[3g. Configurability #4] Adaptation to New Business Scenarios.  The system must be designed to easily accommodate new business scenarios, such as changes in workforce size, shift patterns, or compliance requirements, with minimal system modification.
+[3h. Compliance #8] The system must accommodate regulatory requirements, including the tracking of monthly overtime hours, daily max hour, consecutive working day, rest hour in between shift, max hour consecutive workind day for part timer within a week, Licenses - PLRD, RTT, PGPS, PABP, AO, Arm monitoring,
