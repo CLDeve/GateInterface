@@ -25,7 +25,8 @@
           </div>
         </header>
         <section class="phone-stage">
-          <div class="phone-shell phone-device">
+          <div class="phone-shell phone-device" data-phone-id="1">
+                            <div class="phone-id">IIPhone ID 1.</div>
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <div class="phone-header">
@@ -37,18 +38,11 @@
                 <button class="phone-tab" type="button" data-tab="completed">Completed</button>
               </div>
               <div class="phone-list">
-                <div class="phone-row phone-row-amber" data-flight="SQ 120" data-destination="SIN" data-status="assigned" role="button" tabindex="0">
+                <div class="phone-row phone-row" data-flight="SQ 120" data-destination="SIN" data-status="assigned" role="button" tabindex="0">
                   <div class="phone-time-col">
                     <span class="phone-time-value phone-rt">10:05</span>
                     <span class="phone-gate-label">Gate</span>
-                    <span class="gate-marquee">
-                      <span>Gate Change</span>
-                    </span>
-                    <span class="phone-gate phone-gate-change">
-                      <span class="gate-old">A1</span>
-                      <span class="gate-arrow">→</span>
-                      <span class="gate-new">B4</span>
-                    </span>
+                    <span class="phone-gate">A1</span>
                   </div>
                   <div class="phone-main">
                     <div class="phone-flight-line">
@@ -70,6 +64,100 @@
                     </div>
                   </div>
                 </div>
+                <div class="phone-row phone-row-amber" data-flight="TG 122" data-destination="BKK" data-status="completed" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">10:15</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="gate-marquee">
+                      <span>Gate Change</span>
+                    </span>
+                    <span class="phone-gate phone-gate-change">
+                      <span class="gate-old">A1</span>
+                      <span class="gate-arrow">→</span>
+                      <span class="gate-new">A4</span>
+                    </span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">TG 122</span>
+                      <span class="phone-flight-dest">Bangkok (BKK)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="CX 123" data-destination="HKG" data-status="assigned" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">10:40</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A7</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">CX 123</span>
+                      <span class="phone-flight-dest">Hong Kong (HKG)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row" data-flight="JL 124" data-destination="NRT" data-status="completed" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">11:05</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A8</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">JL 124</span>
+                      <span class="phone-flight-dest">Tokyo (NRT)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-shell phone-device" data-phone-id="2">
+                            <div class="phone-id">Phone ID 2.</div>
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-header">
+                <div class="phone-airline">Critical Flight Monitor</div>
+                <div class="phone-time">17:26</div>
+              </div>
+              <div class="phone-tabs">
+                <button class="phone-tab is-active" type="button" data-tab="assigned">Assigned</button>
+                <button class="phone-tab" type="button" data-tab="completed">Completed</button>
+              </div>
+              <div class="phone-list">
+                <div class="phone-row phone-row-red" data-flight="SQ 120" data-destination="SIN" data-status="assigned" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">10:05</span>
+                    
+                    <span class="gate-marquee">
+                      <span>REPORT TO GATE NOW</span>
+                    </span>
+                    
+                      
+                      <span class="gate-new">A1</span>
+                    </span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">SQ 120</span>
+                      <span class="phone-flight-dest">Singapore (SIN)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-row phone-row" data-flight="MH 121" data-destination="KUL" data-status="assigned" role="button" tabindex="0">
+                  <div class="phone-time-col">
+                    <span class="phone-time-value phone-rt">09:50</span>
+                    <span class="phone-gate-label">Gate</span>
+                    <span class="phone-gate">A3</span>
+                  </div>
+                  <div class="phone-main">
+                    <div class="phone-flight-line">
+                      <span class="phone-flight-no">MH 121</span>
+                      <span class="phone-flight-dest">Kuala Lumpur (KUL)</span>
+                    </div>
+                  </div>
+                </div>
                 <div class="phone-row" data-flight="TG 122" data-destination="BKK" data-status="completed" role="button" tabindex="0">
                   <div class="phone-time-col">
                     <span class="phone-time-value phone-rt">10:15</span>
@@ -112,7 +200,8 @@
               </div>
             </div>
           </div>
-          <div class="phone-shell phone-device">
+          <div class="phone-shell phone-device" data-phone-id="3">
+                            <div class="phone-id">Phone ID 3.</div>
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <div class="phone-header">
@@ -199,7 +288,8 @@
               </div>
             </div>
           </div>
-          <div class="phone-shell phone-device">
+          <div class="phone-shell phone-device" data-phone-id="4">
+                            <div class="phone-id">Phone ID 4.</div>
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <div class="phone-header">
@@ -286,94 +376,8 @@
               </div>
             </div>
           </div>
-          <div class="phone-shell phone-device">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="phone-header">
-                <div class="phone-airline">Critical Flight Monitor</div>
-                <div class="phone-time">17:26</div>
-              </div>
-              <div class="phone-tabs">
-                <button class="phone-tab is-active" type="button" data-tab="assigned">Assigned</button>
-                <button class="phone-tab" type="button" data-tab="completed">Completed</button>
-              </div>
-              <div class="phone-list">
-                <div class="phone-row phone-row-amber" data-flight="SQ 120" data-destination="SIN" data-status="assigned" role="button" tabindex="0">
-                  <div class="phone-time-col">
-                    <span class="phone-time-value phone-rt">10:05</span>
-                    <span class="phone-gate-label">Gate</span>
-                    <span class="gate-marquee">
-                      <span>Gate Change</span>
-                    </span>
-                    <span class="phone-gate phone-gate-change">
-                      <span class="gate-old">A1</span>
-                      <span class="gate-arrow">→</span>
-                      <span class="gate-new">B4</span>
-                    </span>
-                  </div>
-                  <div class="phone-main">
-                    <div class="phone-flight-line">
-                      <span class="phone-flight-no">SQ 120</span>
-                      <span class="phone-flight-dest">Singapore (SIN)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="phone-row phone-row-red" data-flight="MH 121" data-destination="KUL" data-status="assigned" role="button" tabindex="0">
-                  <div class="phone-time-col">
-                    <span class="phone-time-value phone-rt">09:50</span>
-                    <span class="phone-gate-label">Gate</span>
-                    <span class="phone-gate">A3</span>
-                  </div>
-                  <div class="phone-main">
-                    <div class="phone-flight-line">
-                      <span class="phone-flight-no">MH 121</span>
-                      <span class="phone-flight-dest">Kuala Lumpur (KUL)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="phone-row" data-flight="TG 122" data-destination="BKK" data-status="completed" role="button" tabindex="0">
-                  <div class="phone-time-col">
-                    <span class="phone-time-value phone-rt">10:15</span>
-                    <span class="phone-gate-label">Gate</span>
-                    <span class="phone-gate">A1</span>
-                  </div>
-                  <div class="phone-main">
-                    <div class="phone-flight-line">
-                      <span class="phone-flight-no">TG 122</span>
-                      <span class="phone-flight-dest">Bangkok (BKK)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="phone-row" data-flight="CX 123" data-destination="HKG" data-status="assigned" role="button" tabindex="0">
-                  <div class="phone-time-col">
-                    <span class="phone-time-value phone-rt">10:40</span>
-                    <span class="phone-gate-label">Gate</span>
-                    <span class="phone-gate">A7</span>
-                  </div>
-                  <div class="phone-main">
-                    <div class="phone-flight-line">
-                      <span class="phone-flight-no">CX 123</span>
-                      <span class="phone-flight-dest">Hong Kong (HKG)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="phone-row" data-flight="JL 124" data-destination="NRT" data-status="completed" role="button" tabindex="0">
-                  <div class="phone-time-col">
-                    <span class="phone-time-value phone-rt">11:05</span>
-                    <span class="phone-gate-label">Gate</span>
-                    <span class="phone-gate">A8</span>
-                  </div>
-                  <div class="phone-main">
-                    <div class="phone-flight-line">
-                      <span class="phone-flight-no">JL 124</span>
-                      <span class="phone-flight-dest">Tokyo (NRT)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="phone-shell phone-device">
+          <div class="phone-shell phone-device" data-phone-id="5">
+                            <div class="phone-id">Phone ID 5.</div>
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <div class="phone-header">
@@ -526,9 +530,7 @@
             }
           });
 
-          rows
-            .sort((a, b) => Number(a.dataset.rtMinutes) - Number(b.dataset.rtMinutes))
-            .forEach((row) => row.parentElement.appendChild(row));
+          // Keep original order so highlighted rows stay fixed.
         });
       };
 

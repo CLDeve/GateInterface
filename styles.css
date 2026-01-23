@@ -1970,6 +1970,19 @@ body {
   box-shadow: 0 30px 60px rgba(21, 32, 52, 0.25);
 }
 
+.phone-id {
+  position: absolute;
+  top: -18px;
+  left: 10px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .phone-notch {
   position: absolute;
   top: 10px;
