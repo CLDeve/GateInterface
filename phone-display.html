@@ -338,7 +338,7 @@
                     <span class="phone-time-value phone-rt">10:15</span>
                     <span class="phone-gate-label">Gate</span>
                     <span class="gate-marquee">
-                      <span>Gate Change</span>
+                      <span>CHANGE GATE AND PIER</span>
                     </span>
                     <span class="phone-gate phone-gate-change">
                       <span class="gate-old">A1</span>
@@ -533,7 +533,9 @@
             }
           });
 
-          // Keep original order so highlighted rows stay fixed.
+          rows
+            .sort((a, b) => Number(a.dataset.rtMinutes) - Number(b.dataset.rtMinutes))
+            .forEach((row) => row.parentElement.appendChild(row));
         });
       };
 
